@@ -45,6 +45,5 @@ RSpec.describe GymClass, type: :model do
 
       it { expect(build(:gym_class, teacher_id: aluno.id)).not_to be_valid }
     end
-
   end
 end
