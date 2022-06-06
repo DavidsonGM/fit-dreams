@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_06_05_032116) do
 
   create_table "gym_classes", force: :cascade do |t|
     t.string "name"
-    t.time "start_time"
+    t.datetime "start_time"
     t.integer "duration"
     t.text "description"
     t.bigint "teacher_id"
