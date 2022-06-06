@@ -25,11 +25,15 @@ RSpec.describe GymClass, type: :model do
     end
 
     context 'when duration is negative' do
-        it { expect(build(:gym_class, duration: -1)).not_to be_valid }
+      it { expect(build(:gym_class, duration: -1)).not_to be_valid }
     end
 
     context 'when duration is too short' do
       it { expect(build(:gym_class, duration: 4)).not_to be_valid }
+    end
+
+    context 'when description is too short' do
+      it { expect(build(:gym_class, description: 'Descrição')).not_to be_valid }
     end
 
     context 'when start time is before current date' do

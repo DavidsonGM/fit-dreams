@@ -8,6 +8,7 @@ class GymClass < ApplicationRecord
 
   validates :name, :start_time, :duration, :description, presence: true
   validates :duration, numericality: { greater_than_or_equal_to: 5, only_integer: true }
+  validates :description, length: { minimum: 10 }
 
   validate :start_time_before_current_date
   validate :user_is_teacher

@@ -47,7 +47,7 @@ RSpec.describe User, type: :model do
     context 'when user_mail already exists' do
       let(:user) { create(:user) }
 
-      it { expect(build(:user, role_id: user.role_id)).not_to be_valid }
+      it { expect(build(:user, email: user.email, role_id: user.role_id)).not_to be_valid }
     end
 
     context 'when birthdate format is not valid' do

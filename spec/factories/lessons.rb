@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :lesson do
-    user { nil }
-    gym_class { nil }
+    user { create(:user) }
+    gym_class { create(:gym_class) }
   end
 end
