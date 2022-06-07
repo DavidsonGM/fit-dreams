@@ -8,6 +8,10 @@ RSpec.describe User, type: :model do
       it { expect(build(:user)).to be_valid }
 
       it { expect(build(:user).role.name).to eq 'aluno' }
+
+      it 'creates an authentication token for the user' do
+        expect(create(:user).authentication_token).not_to be nil
+      end
     end
 
     context 'when using teacher factory' do
