@@ -19,4 +19,4 @@ Rails/FilePath:
 
 Metrics/BlockLength:
   Exclude:
-    - spec/models/*
+    - spec/**/*

@@ -65,3 +65,6 @@ gem 'simple_token_authentication'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
+
+# Padronização das respostas das requisições
+gem 'active_model_serializers'
