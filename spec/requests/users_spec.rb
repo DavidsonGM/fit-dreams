@@ -22,7 +22,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'returns the created user data' do
-        expect(JSON.parse(response.body).keys).to eq(%w[id email name birthdate role])
+        expect(JSON.parse(response.body).keys).to eq(%w[id email name birthdate role student_classes])
       end
 
       it 'creates a new user' do
@@ -92,7 +92,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'returns the updated user data' do
-        expect(JSON.parse(response.body).keys).to eq(%w[id email name birthdate role])
+        expect(JSON.parse(response.body).keys).to eq(%w[id email name birthdate role student_classes])
       end
 
       it 'updates user' do
@@ -207,7 +207,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'returns user data' do
-        expect(JSON.parse(response.body).keys).to eq(%w[id email name birthdate role])
+        expect(JSON.parse(response.body).keys).to eq(%w[id email name birthdate role student_classes])
       end
     end
 
@@ -219,7 +219,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'returns user data' do
-        expect(JSON.parse(response.body).keys).to eq(%w[id email name birthdate role])
+        expect(JSON.parse(response.body).keys).to eq(%w[id email name birthdate role student_classes])
       end
     end
 

@@ -29,9 +29,9 @@ class UsersController < ApplicationController
            else
              User.find_by!(email: params[:email])
            end
-    render json: user, status: :ok
-  rescue StandardError
-    render json: { error: 'Não existe uma conta associada a esse email!' }, status: :not_found
+    render json: user, include: %w[role student_classes.category teacher_classes.category], status: :ok
+  rescue StandardError => e
+    render json: { error: e }, status: :not_found
   end
 
   def update
