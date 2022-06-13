@@ -4,7 +4,7 @@ class GymClass < ApplicationRecord
   belongs_to :teacher, class_name: 'User', inverse_of: :teacher_classes
   has_many :lessons, dependent: :destroy
   has_many :students, through: :lessons, source: :user
-  belongs_to :category
+  belongs_to :category, optional: true
 
   validates :name, :start_time, :duration, :description, presence: true
   validates :duration, numericality: { greater_than_or_equal_to: 5, only_integer: true }

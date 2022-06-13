@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class CategorySerializer < ActiveModel::Serializer
-  attributes :name, :description
+  attributes :id, :name, :description
 end
