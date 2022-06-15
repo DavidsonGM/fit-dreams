@@ -31,7 +31,8 @@ RSpec.describe 'GymClasses', type: :request do
       end
 
       it 'returns the created gym class data' do
-        expect(JSON.parse(response.body).keys).to eq(%w[id name description start_time duration category teacher students])
+        expect(JSON.parse(response.body).keys).to eq(%w[id name description start_time duration category teacher
+                                                        students])
       end
 
       it 'creates a new gym class' do
@@ -113,7 +114,8 @@ RSpec.describe 'GymClasses', type: :request do
       end
 
       it 'returns the updated gym_class data' do
-        expect(JSON.parse(response.body).keys).to eq(%w[id name description start_time duration category teacher students])
+        expect(JSON.parse(response.body).keys).to eq(%w[id name description start_time duration category teacher
+                                                        students])
       end
 
       it 'updates gym_class' do
@@ -276,7 +278,8 @@ RSpec.describe 'GymClasses', type: :request do
       end
 
       it 'returns gym_class info in the array elements' do
-        expect(JSON.parse(response.body).first.keys).to eq(%w[id name description start_time duration category teacher students])
+        expect(JSON.parse(response.body).first.keys).to eq(%w[id name description start_time duration category teacher
+                                                              students])
       end
     end
 

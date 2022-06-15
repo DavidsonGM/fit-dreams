@@ -2,13 +2,13 @@
 
 require 'rails_helper'
 
-RSpec.describe "Lessons", type: :request do
+RSpec.describe 'Lessons', type: :request do
   let(:admin) { create(:admin) }
   let(:student1) { create(:user) }
   let(:student2) { create(:user, role: student1.role) }
   let(:gym_class) { create(:gym_class) }
 
-  describe "POST /create" do
+  describe 'POST /create' do
     let(:create_lesson_params) { { lesson: { user_id: student1.id, gym_class_id: gym_class.id } } }
 
     context 'when admin register user in class' do

@@ -20,3 +20,4 @@ Rails/FilePath:
 Metrics/BlockLength:
   Exclude:
     - spec/**/*
+    - config/routes.rb
