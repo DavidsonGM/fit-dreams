@@ -27,4 +27,9 @@ Rails.application.routes.draw do
     patch 'update/:id', to: 'gym_classes#update'
     delete 'delete/:id', to: 'gym_classes#delete'
   end
+
+  scope 'lessons' do
+    post 'create', to: 'lessons#create'
+    delete 'delete', to: 'lessons#delete'
+  end
 end
