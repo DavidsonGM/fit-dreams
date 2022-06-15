@@ -294,5 +294,19 @@ RSpec.describe 'GymClasses', type: :request do
         expect(JSON.parse(response.body).first['id']).to eq(GymClass.all.offset(offset).first.id)
       end
     end
+
+    context 'with incorrect pagination params' do
+      let(:pagination_params) { { items_per_page: -2, page: -1 } }
+
+      before { get '/gym_classes/index', params: pagination_params }
+
+      it 'returns a bad request status' do
+        expect(response).to have_http_status(:bad_request)
+      end
+
+      it 'returns an error in response' do
+        expect(JSON.parse(response.body).keys).to eq(['error'])
+      end
+    end
   end
 end
