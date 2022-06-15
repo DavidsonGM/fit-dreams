@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class GymClassesController < ApplicationController
   acts_as_token_authentication_handler_for User, except: %i[show index], fallback_to_devise: false
   before_action :require_admin_or_teacher, except: %i[show index]
 
   def index
-    items_per_page = params[:items_per_page] || 30
-    page = params[:page] || 1
+    items_per_page = (params[:items_per_page] || 30).to_i
+    page = (params[:page] || 1).to_i
     gym_classes = GymClass.limit(items_per_page).offset((page - 1) * items_per_page)
     render json: gym_classes, status: :ok
   rescue StandardError => e
