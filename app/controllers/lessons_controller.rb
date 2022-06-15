@@ -28,6 +28,6 @@ class LessonsController < ApplicationController
   end
   
   def authenticate_current_user
-    require_admin_or_teacher if current_user.id != params[:user_id]
+    require_admin_or_teacher if current_user.id != params[:lesson][:user_id].to_i
   end
 end
