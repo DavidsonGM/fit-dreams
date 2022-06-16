@@ -21,4 +21,4 @@ Para facilitar os testes das requisições que exigem que o usuário seja um adm
 
 ## Deploy
 
-A API teve seu deploy feito no heroku, e sua URL base é https://fit-dreams-api.herokuapp.com/. Exemplos de casos de sucesso e falha para cada requisição podem ser encontrados nos arquivos dentro do diretório spec/requests
+A API teve seu deploy feito no heroku, e sua URL base é https://fit-dreams-api.herokuapp.com/. Exemplos de casos de sucesso e falha para cada requisição podem ser encontrados nos arquivos dentro do diretório spec/requests. Adicionalmente, caso prefira, também é possível importar o [arquivo JSON do insomnia](https://github.com/DavidsonGM/fit-dreams/blob/master/Fit-dreams-api-insomnia.json) que contém chamadas para todas as requisições implementadas utilizando a URL do deploy.
