@@ -16,3 +16,5 @@ Para o desenvolvimento do projeto foi optado pela utilização da versão 6.1.5 
 
 ## Rodando o projeto
 Para inicializar o projeto, comece rodando `bundle` seguido de um `rails db:setup` e, caso tenha dado tudo certo, basta rodar um `rails s` para rodar o servidor. 
+
+Para facilitar os testes das requisições que exigem que o usuário seja um admin ou um professor (como edição de categorias e aulas), foi optado por permitir a escolha da role do usuário em seu cadastro. Dessa forma, para testar os métodos dessas controllers, basta criar um novo usuário pela rota `post /users/sign_up` passando 2 ou 3 para o parâmetro _role_id_ e, em seguida efetuar o login com o email e senha cadastrados (rota `post /users/sign_in`) para obter o token de autenticação do usuário. Com o token de autenticação do usuário em mãos, basta passar as seguintes informações do usuário no _header_ da requisição: `X-User-Email: email_cadastrado` e `X-User-Token: token_de_autenticacao_obtido_no_login`.
